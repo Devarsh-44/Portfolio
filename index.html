@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+   
+    <link href="https://fonts.googleapis.com/css?family=Audiowide&display=swap" rel="stylesheet">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Devarsh Portfolio</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <style>
+      :root {
+        --black: #0a0a0a;
+        --purple: #8a2be2;
+        --white: #ffffff;
+        --dark-purple: #2d0a4a;
+        --gradient: linear-gradient(45deg, var(--purple), var(--dark-purple));
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        background-color: var(--black);
+        color: var(--white);
+        font-family: "https://fonts.googleapis.com/css?family=Audiowide", sans-serif;
+        line-height: 1.6;
+        overflow-x: hidden;
+      }
+
+      /* Navigation */
+      nav {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        background: rgba(10, 10, 10, 0.95);
+        padding: 1rem 2rem;
+        z-index: 1000;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        backdrop-filter: blur(10px);
+        transition: background 0.3s ease-in-out;
+      }
+
+      .logo {
+        font-size: 1.8rem;
+        color: var(--purple);
+        font-weight: bold;
+        cursor: pointer;
+      }
+
+      .nav-links {
+        display: flex;
+        gap: 2rem;
+      }
+
+      .nav-links a {
+        color: var(--white);
+        text-decoration: none;
+        font-weight: 500;
+        transition: transform 0.3s ease-in-out;
+      }
+
+      .nav-links a:hover {
+        transform: scale(1.1);
+      }
+
+      /* Hero Section */
+      .hero {
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        background: var(--gradient);
+        padding: 2rem;
+        animation: fadeIn 1.5s ease-in-out;
+      }
+
+      .hero h1 {
+        font-size: 4rem;
+        margin-bottom: 1rem;
+        animation: slideDown 1s ease-in-out;
+      }
+
+      /* Projects Grid */
+      .projects {
+        padding: 4rem 2rem;
+      }
+
+      .projects-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .project-card {
+        background: var(--dark-purple);
+        border-radius: 15px;
+        overflow: hidden;
+        transition: transform 0.5s ease-in-out, box-shadow 0.5s;
+        cursor: pointer;
+        opacity: 0;
+        transform: scale(0.9);
+        padding: 1rem;
+        text-align: center;
+      }
+
+      .project-card.visible {
+        opacity: 1;
+        transform: scale(1);
+      }
+
+      .project-card:hover {
+        transform: scale(1.05);
+        box-shadow: 0 15px 40px rgba(138, 43, 226, 0.3);
+      }
+
+      .project-card img {
+        width: 100%;
+        border-radius: 10px;
+      }
+
+      /* Formula 1-inspired Animation */
+      .f1-animation {
+        position: fixed;
+        bottom: 0;
+        left: -200px;
+        width: 100px;
+        animation: f1Move 5s linear infinite;
+      }
+
+      @keyframes f1Move {
+        from {
+          left: -200px;
+        }
+        to {
+          left: 100vw;
+        }
+      }
+
+      /* Animations */
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+
+      @keyframes slideDown {
+        from {
+          transform: translateY(-50px);
+          opacity: 0;
+        }
+        to {
+          transform: translateY(0);
+          opacity: 1;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <div class="logo">Devarsh</div>
+      <div class="nav-links">
+        <a href="#work">Work</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </nav>
+
+    <section class="hero">
+      <div>
+        <h1>Devarsh Kotak</h1>
+        <p>
+          Developer, problem solver, and business strategist. Passionate about
+          technology and innovation, bridging the gap between code and business.
+        </p>
+      </div>
+    </section>
+
+    <section id="work" class="projects">
+      <h2>Featured Projects</h2>
+      <div class="projects-grid">
+        <div
+          class="project-card visible"
+          onclick="window.location.href='https://github.com/Devarsh-44/HMILTON'"
+        >
+          <h3>HAMILTON</h3>
+          <p>An AI-powered F1 knowledge assistant.</p>
+        </div>
+        <div class="project-card visible">
+          <h3>Stock Analyzer</h3>
+          <p>Analyzes stock market trends using AI.</p>
+        </div>
+        <div class="project-card visible">
+          <h3>E-commerce Dashboard</h3>
+          <p>Data-driven insights for online stores.</p>
+        </div>
+      </div>
+    </section>
+
+  </section>
+  <section id="contact" class="contact">
+    <h2 style="text-align: center;">Contact Me</h2>
+    <p>If you would like to get in touch, feel free to reach out via email or connect with me on LinkedIn.</p>
+    <br>
+    <ul style="list-style: none; display: flex; gap: 1rem; padding: 0;">
+      <li>
+        <a href="mailto:kotakdevarsh0@gmail.com" style="background: var(--purple); color: var(--white); padding: 0.5rem 1rem; border-radius: 5px; text-decoration: none;">Email</a>
+      </li>
+      <li>
+      <a href="https://www.linkedin.com/in/devarsh-kotak" target="_blank" style="background: var(--purple); color: var(--white); padding: 0.5rem 1rem; border-radius: 5px; text-decoration: none;">LinkedIn</a>
+      </li>
+      <li>
+      <a href="https://github.com/Devarsh-44" target="_blank" style="background: var(--purple); color: var(--white); padding: 0.5rem 1rem; border-radius: 5px; text-decoration: none;">GitHub</a>
+      </li>
+    </ul>
+  </section>
+  </body>
+</html>
